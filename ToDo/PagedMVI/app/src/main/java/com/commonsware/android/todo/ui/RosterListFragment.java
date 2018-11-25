@@ -198,7 +198,7 @@ public class RosterListFragment extends AbstractRosterFragment {
 
   @Override
   protected void render(PagedList<ToDoModel> items) {
-    adapter.setList(items);
+    adapter.submitList(items);
 
     if (items.size()==0) {
       getEmptyView().setVisibility(View.VISIBLE);

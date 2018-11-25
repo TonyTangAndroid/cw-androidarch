@@ -14,10 +14,10 @@
 
 package com.commonsware.android.todo.impl;
 
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.recyclerview.extensions.DiffCallback;
+
 import com.google.auto.value.AutoValue;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Comparator;

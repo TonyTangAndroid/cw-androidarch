@@ -89,8 +89,8 @@ class RosterListAdapter extends AbstractRosterFragment.BaseRosterAdapter<RosterR
   }
 
   @Override
-  public void setList(PagedList<ToDoModel> pagedList) {
-    super.setList(pagedList);
+  public void submitList(PagedList<ToDoModel> pagedList) {
+    super.submitList(pagedList);
 
     updateActionMode();
   }

@@ -136,7 +136,7 @@ public class DisplayFragment extends AbstractRosterFragment {
 
   @Override
   protected void render(PagedList<ToDoModel> items) {
-    adapter.setList(items);
+    adapter.submitList(items);
     editMenu.setVisible(items.size()>0);
     updatePager();
   }

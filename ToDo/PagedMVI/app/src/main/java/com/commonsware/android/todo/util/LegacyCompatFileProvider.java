@@ -16,12 +16,16 @@ package com.commonsware.android.todo.util;
 
 import android.database.Cursor;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v4.content.FileProvider;
+
 import com.commonsware.cwac.provider.LegacyCompatCursorWrapper;
 
 public class LegacyCompatFileProvider extends FileProvider {
-  @Override
-  public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-    return(new LegacyCompatCursorWrapper(super.query(uri, projection, selection, selectionArgs, sortOrder)));
-  }
+    @Override
+    public Cursor query(@NonNull Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+        Cursor query = super.query(uri, projection, selection, selectionArgs, sortOrder);
+        assert query != null;
+        return (new LegacyCompatCursorWrapper(query));
+    }
 }

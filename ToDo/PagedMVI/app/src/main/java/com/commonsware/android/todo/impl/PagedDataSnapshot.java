@@ -31,8 +31,8 @@ public class PagedDataSnapshot<T, PK> {
       new PagedList.Builder<>(dataSource, count);
 
     pagedList=builder
-      .setBackgroundThreadExecutor(Executors.newSingleThreadExecutor())
-      .setMainThreadExecutor(new MainThreadExecutor())
+      .setFetchExecutor(Executors.newSingleThreadExecutor())
+      .setNotifyExecutor(new MainThreadExecutor())
       .build();
   }
 
